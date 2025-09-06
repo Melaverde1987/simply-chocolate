@@ -1,0 +1,76 @@
+.top-sellers {
+  padding-top: 72px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 120px;
+    padding-bottom: 50px;
+  }
+
+  .headline {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .top-sellers-list {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    li {
+      @media screen and (min-width: 768px) {
+        flex-basis: calc(33.33% - 16px * 2 / 3);
+      }
+
+      img {
+        aspect-ratio: 1/1;
+        border-radius: 15px;
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+          aspect-ratio: 3/4;
+        }
+      }
+    }
+  }
+
+  .text-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 32px;
+    flex-direction: column;
+    gap: 16px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .title {
+      font-size: 16px;
+      line-height: 1.28;
+      letter-spacing: -0.02em;
+      max-width: 310px;
+    }
+  }
+}

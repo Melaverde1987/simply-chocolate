@@ -1,0 +1,268 @@
+header {
+  .header-container {
+    @media only screen and (min-width: 1200px) {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 6px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      gap: 180px;
+    }
+
+    .logo {
+      color: $lightBlack;
+      font-weight: 700;
+      line-height: 1.28;
+      padding: 14px 0;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      @media only screen and (min-width: 768px) {
+        padding: 24px 0;
+      }
+
+      .logo-item {
+        font-style: italic;
+      }
+
+      .logo-icon {
+        width: 21px;
+        height: 21px;
+
+        @media only screen and (min-width: 1200px) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 24px;
+
+      @media only screen and (max-width: 1199px) {
+        display: none;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        line-height: 1.14;
+        padding: 24px 0;
+        letter-spacing: -0.02em;
+        transition: color 300ms $cubicTransition;
+
+        &:hover,
+        &:focus {
+          color: $orange;
+        }
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 18px;
+
+    @media only screen and (max-width: 1199px) {
+      display: none;
+    }
+
+    .socials-item {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+
+      &:hover .socials-icon,
+      &:focus .socials-icon {
+        fill: $orange;
+      }
+    }
+
+    .socials-icon {
+      fill: currentColor;
+      transition: fill 300ms $cubicTransition;
+    }
+  }
+}
+
+/*
+==============
+BURGER BUTTON
+==============
+*/
+
+header {
+  .menu-toggle {
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    @media only screen and (min-width: 768px) {
+      height: 32px;
+      width: 32px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      display: none;
+    }
+
+    .icon {
+      @media only screen and (min-width: 768px) {
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+}
+
+/* 
+=============
+MOBILE MENU
+=============
+*/
+
+header {
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 280px;
+    width: 100%;
+    height: 100vh;
+    padding: 136px 20px 20px 20px;
+    background-color: $darkViolet;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 250ms $cubicTransition;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+
+    @media only screen and (min-width: 768px) {
+      max-width: 320px;
+      padding: 156px 32px 32px 32px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      display: none;
+    }
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    .menu-toggle {
+      width: 28px;
+      height: 28px;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //transition: background-color 250ms $cubicTransition, border 250ms $cubicTransition;
+
+      /*
+      &:focus,
+      &:hover {
+        background-color: $lightOrange;
+
+        .close-icon {
+          fill: $orange;
+        }
+      }
+      */
+    }
+
+    .close-icon {
+      fill: $orange;
+      //transition: fill 300ms $cubicTransition;
+    }
+
+    .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: auto;
+      padding: 0 30px;
+
+      @media only screen and (min-width: 768px) {
+        padding: 0 50px;
+      }
+
+      .mobile-link {
+        font-weight: 500;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        transition: color 300ms $cubicTransition;
+
+        &:focus,
+        &:focus-visible {
+          color: $orange;
+          outline: 0;
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+
+      .social-icon {
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: 768px) {
+          width: 24px;
+          height: 24px;
+        }
+
+        &:focus,
+        &:focus-visible {
+          outline: 0;
+
+          .icon {
+            fill: $orange;
+          }
+        }
+
+        .icon {
+          fill: $white;
+          transition: fill 300ms $cubicTransition;
+
+          @media only screen and (min-width: 768px) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

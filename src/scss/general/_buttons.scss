@@ -1,0 +1,87 @@
+@import 'variables';
+
+.btn-primary {
+  background: $orange;
+  color: $white;
+  border: none;
+  transition: color 300ms $cubicTransition,
+    background-color 300ms $cubicTransition;
+
+  &:hover,
+  &:focus {
+    background-color: $lightOrange;
+    color: $orange;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid $orange;
+  color: $lightBlack;
+  transition: color 300ms $cubicTransition,
+    background-color 300ms $cubicTransition;
+
+  &:hover,
+  &:focus {
+    background-color: $orange;
+    color: $white;
+  }
+}
+
+.btn-outline {
+  padding: 14px 22px;
+  border-radius: 100px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
+  transition: color 300ms $cubicTransition, border-color 300ms $cubicTransition;
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 40px;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $orange;
+    color: $orange;
+  }
+}
+
+.btn-scroll {
+  width: 28px;
+  height: 28px;
+  color: $white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.03em;
+  color: $black;
+  border: 0;
+  background: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 300ms $cubicTransition;
+
+  @media screen and (min-width: 768px) {
+    width: 38px;
+    height: 38px;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    fill: $orange;
+    transition: fill 300ms $cubicTransition;
+
+    @media screen and (min-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

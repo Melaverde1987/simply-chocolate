@@ -1,25 +1,21 @@
 // js SwiperOurProducts
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-js', {
   direction: 'horizontal',
   loop: true,
-
   slidesPerView: 1,
   spaceBetween: 18,
 
   breakpoints: {
-    //  >= 320px
-    320: {
-      slidesPerView: 1,
+    576: {
+      slidesPerView: 2,
       spaceBetween: 18,
     },
-    //  >= 768px
-    768: {
-      slidesPerView: 4,
+    1200: {
+      slidesPerView: 3,
       spaceBetween: 18,
     },
 
-    //  >= 1200px
-    1200: {
+    1400: {
       slidesPerView: 4,
       spaceBetween: 18,
     },
@@ -31,8 +27,8 @@ const swiper = new Swiper('.swiper', {
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-btn-next',
+    prevEl: '.swiper-btn-prev',
   },
 
   /*
@@ -41,28 +37,6 @@ const swiper = new Swiper('.swiper', {
   },
   */
 });
-
-// const swiper = new Swiper('.swiper', {
-//   // Optional parameters
-//   direction: 'horizontal',
-//   loop: true,
-
-//   // If we need pagination
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
 
 var reviewSwiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
@@ -97,3 +71,24 @@ var reviewSwiper = new Swiper('.mySwiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+/*
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: tru
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+*/

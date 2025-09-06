@@ -135,7 +135,8 @@
   margin-bottom: 14px;
   border-radius: 35px;
   display: block;
-  transition: background-color 250ms var(--cubic-transition), color 250ms var(--cubic-transition);
+  transition: background-color 250ms var(--cubic-transition),
+    color 250ms var(--cubic-transition);
 }
 
 .unique-overlay-text {

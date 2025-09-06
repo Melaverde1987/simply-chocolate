@@ -1,0 +1,127 @@
+.our-products {
+  padding-top: 72px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 120px;
+    padding-bottom: 50px;
+  }
+
+  .headline {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .swiper-container {
+    position: relative;
+    overflow: hidden;
+    padding-inline: 18px;
+
+    .btn-swiper {
+      position: absolute;
+      top: 40%;
+      z-index: 2;
+      height: 38px;
+      width: 38px;
+      padding: 4px;
+      background: $lightBlack;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $orange;
+      background: $lightWhite;
+      border: 1px solid rgba(17, 17, 17, 0.3);
+    }
+
+    .swiper-btn-prev {
+      left: 0;
+      rotate: 90deg;
+    }
+
+    .swiper-btn-next {
+      right: 0;
+      rotate: -90deg;
+    }
+
+    .swiper-wrapper {
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px;
+        background: $white;
+        border: 1px solid rgba(17, 17, 17, 0.3);
+        border-radius: 15px;
+
+        .card-headline {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 1.33;
+          letter-spacing: -0.02em;
+          margin-top: 8px;
+          margin-bottom: 2px;
+        }
+        .card-text {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.17;
+          letter-spacing: -0.02em;
+          margin-bottom: 18px;
+        }
+        .card-price {
+          width: 94px;
+          height: 33px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 1.21;
+          color: $lightBlack;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $lightWhite;
+          border: 1px solid rgba(17, 17, 17, 0.3);
+          border-radius: 100px;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      position: static !important;
+      margin-top: 24px;
+
+      .swiper-pagination-bullet {
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 13px)
+        ) !important;
+        height: var(
+          --swiper-pagination-bullet-height,
+          var(--swiper-pagination-bullet-size, 13px)
+        ) !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: $orange;
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 28px)
+        ) !important;
+        border-radius: 10px;
+      }
+    }
+  }
+}
