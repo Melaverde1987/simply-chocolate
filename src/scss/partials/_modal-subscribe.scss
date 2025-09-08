@@ -1,0 +1,129 @@
+.modal-subscribe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 201px 24px 32px 24px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 311px;
+  background-color: $lightWhite;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    max-width: 538px;
+    padding: 236px 40px 40px 40px;
+  }
+
+  .btn-close {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    margin: 14px;
+    display: flex;
+    fill: $white;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all $cubicTransition;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      fill: $orange;
+      background-color: $lightOrange;
+    }
+  }
+
+  .modal-headline {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .modal-subscribe-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 169px;
+    background-color: rgb(54, 18, 18);
+    background-image: url(../img/modal-subscribe/mod-exp_mob.jpg);
+    background-size: cover;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .modal-subscribe-pic {
+      background-image: url(../img/modal-subscribe/mod-exp_mob@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .modal-subscribe-pic {
+      height: 196px;
+      background-image: url(../img/modal-subscribe/mod-exp_desk.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      .modal-subscribe-pic {
+        background-image: url(../img/modal-subscribe/mod-exp_desk@2x.jpg);
+      }
+    }
+  }
+
+  .modal-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 16px;
+
+    .form-label {
+      flex-basis: 100%;
+      display: block;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      color: $black;
+      margin-bottom: 8px;
+      margin-top: 18px;
+
+      @media only screen and (min-width: 768px) {
+        font-size: 14px;
+      }
+    }
+
+    .form-input {
+      position: relative;
+      border: 1px solid rgba(17, 17, 17, 0.1);
+      filter: drop-shadow(0px 5.44492px 5.44492px rgba(0, 0, 0, 0.03));
+      width: 60%;
+      padding: 12px 18px;
+      background-color: $white;
+      border-radius: 25px;
+
+      &:focus,
+      &:focus-visible {
+        border: 1px solid $orange;
+        outline: none;
+      }
+    }
+  }
+}

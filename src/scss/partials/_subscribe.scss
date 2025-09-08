@@ -1,0 +1,101 @@
+.subscribe {
+  background-color: $black;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../img/subscribe/bg-sub-mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 62px;
+  padding-bottom: 63px;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url(../img/subscribe/bg-sub-mob@2x.jpg);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url(../img/subscribe/bg-sub-tab.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
+        ),
+        url(../img/subscribe/bg-sub-tab@2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url(../img/subscribe/bg-sub-pc.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
+        ),
+        url(../img/subscribe/bg-sub-pc@2x.jpg);
+    }
+  }
+
+  .headline {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    color: $white;
+    max-width: 290px;
+    margin-inline: auto;
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      max-width: 380px;
+    }
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: $white;
+    max-width: 380px;
+    margin: 24px auto;
+
+    @media screen and (min-width: 768px) {
+      max-width: 470px;
+      font-size: 16px;
+    }
+  }
+
+  .btn-primary {
+    margin: 0 auto;
+    display: block;
+  }
+}

@@ -2,6 +2,17 @@
 
 html {
   scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $orange;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $lightWhite;
+  }
 }
 
 h1,
@@ -44,7 +55,16 @@ img {
 }
 
 input,
-textarea {
+input::placeholder,
+textarea,
+textarea::placeholder {
+  font-size: 14px;
+  line-height: 1.21;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
   &:focus {
     outline: 1px solid $orange;
   }
