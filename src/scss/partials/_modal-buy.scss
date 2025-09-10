@@ -4,14 +4,38 @@
   border-radius: 15px;
   background-color: $lightWhite;
   padding: 50px 24px 20px;
-  margin: 10px auto;
   height: calc(100vh - 20px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   @media screen and (min-width: 768px) {
     width: 610px;
     padding: 50px 48px 40px;
-    margin-block: 20px;
     height: calc(100vh - 40px);
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    margin: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: all 400ms $cubicTransition;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      fill: $orange;
+      background-color: $lightOrange;
+    }
   }
 
   .modal-holder {
@@ -167,30 +191,6 @@
       .btn-primary {
         margin-top: 20px;
       }
-    }
-  }
-
-  .btn-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    border: none;
-    margin: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    transition: background-color 250ms var(--cubic-transition),
-      color 250ms var(--cubic-transition);
-
-    &:hover,
-    &:focus {
-      outline: none;
-      fill: $orange;
-      background-color: $lightOrange;
     }
   }
 }

@@ -4,8 +4,6 @@
   background: $orange;
   color: $white;
   border: none;
-  transition: color 300ms $cubicTransition,
-    background-color 300ms $cubicTransition;
 
   &:hover,
   &:focus {
@@ -18,8 +16,6 @@
   background-color: transparent;
   border: 1px solid $orange;
   color: $lightBlack;
-  transition: color 300ms $cubicTransition,
-    background-color 300ms $cubicTransition;
 
   &:hover,
   &:focus {
@@ -35,7 +31,6 @@
   background-color: transparent;
   border: 1px solid $white;
   color: $white;
-  transition: color 300ms $cubicTransition, border-color 300ms $cubicTransition;
 
   @media screen and (min-width: 768px) {
     padding: 14px 40px;
@@ -64,7 +59,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 300ms $cubicTransition;
 
   @media screen and (min-width: 768px) {
     width: 38px;
@@ -77,7 +71,7 @@
     align-items: center;
     margin: auto;
     fill: $orange;
-    transition: fill 300ms $cubicTransition;
+    transition: fill 400ms $cubicTransition;
 
     @media screen and (min-width: 768px) {
       width: 18px;

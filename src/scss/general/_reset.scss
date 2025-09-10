@@ -34,6 +34,12 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+  transition: all 400ms $cubicTransition;
+
+  &:hover,
+  &:focus {
+    color: $orange;
+  }
 }
 
 button {
@@ -41,6 +47,7 @@ button {
   padding: 14px 22px;
   border-radius: 100px;
   font-weight: 600;
+  transition: all 400ms $cubicTransition;
 
   @media screen and (min-width: 768px) {
     padding: 14px 40px;

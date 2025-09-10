@@ -6,12 +6,11 @@
   padding: 201px 24px 32px 24px;
   border-radius: 15px;
   width: 90%;
-  max-width: 311px;
   background-color: $lightWhite;
   overflow: hidden;
 
   @media screen and (min-width: 768px) {
-    max-width: 538px;
+    max-width: 610px;
     padding: 236px 40px 40px 40px;
   }
 
@@ -30,7 +29,7 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    transition: all $cubicTransition;
+    transition: all 400ms $cubicTransition;
 
     &:hover,
     &:focus {
@@ -92,6 +91,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     column-gap: 16px;
+    position: relative;
 
     .form-label {
       flex-basis: 100%;
@@ -114,16 +114,28 @@
       position: relative;
       border: 1px solid rgba(17, 17, 17, 0.1);
       filter: drop-shadow(0px 5.44492px 5.44492px rgba(0, 0, 0, 0.03));
-      width: 60%;
+      width: 100%;
       padding: 12px 18px;
       background-color: $white;
       border-radius: 25px;
+      padding-right: 125px;
+
+      @media only screen and (min-width: 768px) {
+        padding-right: 160px;
+      }
 
       &:focus,
       &:focus-visible {
         border: 1px solid $orange;
         outline: none;
       }
+    }
+
+    .btn-primary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 14px;
     }
   }
 }
