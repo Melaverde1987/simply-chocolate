@@ -1,4 +1,3 @@
-// js SwiperOurProducts
 const swiper = new Swiper('.swiper-js', {
   direction: 'horizontal',
   loop: true,
