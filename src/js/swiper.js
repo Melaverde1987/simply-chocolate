@@ -1,4 +1,11 @@
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
 const swiper = new Swiper('.swiper-js', {
+  modules: [Navigation, Pagination],
   direction: 'horizontal',
   loop: true,
   slidesPerView: 1,
@@ -32,6 +39,7 @@ const swiper = new Swiper('.swiper-js', {
 });
 
 var reviewSwiper = new Swiper('.reviews-swiper', {
+  modules: [Navigation, Pagination],
   slidesPerView: 1,
   spaceBetween: 16,
   slidesPerGroup: 1,
