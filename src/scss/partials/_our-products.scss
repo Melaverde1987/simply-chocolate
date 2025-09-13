@@ -81,6 +81,10 @@
           line-height: 1.17;
           letter-spacing: -0.02em;
           margin-bottom: 18px;
+
+          @media screen and (min-width: 768px) {
+            font-size: 16px;
+          }
         }
         .card-price {
           width: 94px;
@@ -104,13 +108,15 @@
       margin-top: 24px;
 
       .swiper-pagination-bullet {
+        margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 6px);
+        text-indent: -99999px;
         width: var(
           --swiper-pagination-bullet-width,
-          var(--swiper-pagination-bullet-size, 13px)
+          var(--swiper-pagination-bullet-size, 14px)
         ) !important;
         height: var(
           --swiper-pagination-bullet-height,
-          var(--swiper-pagination-bullet-size, 13px)
+          var(--swiper-pagination-bullet-size, 14px)
         ) !important;
       }
 
@@ -118,7 +124,7 @@
         background: $orange;
         width: var(
           --swiper-pagination-bullet-width,
-          var(--swiper-pagination-bullet-size, 28px)
+          var(--swiper-pagination-bullet-size, 30px)
         ) !important;
         border-radius: 10px;
       }

@@ -10,7 +10,10 @@ const swiper = new Swiper('.swiper-js', {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 18,
-
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+  },
   breakpoints: {
     576: {
       slidesPerView: 2,
@@ -30,11 +33,15 @@ const swiper = new Swiper('.swiper-js', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.swiper-btn-next',
-    prevEl: '.swiper-btn-prev',
+    renderBullet: function (index, className) {
+      return (
+        '<button class="' +
+        className +
+        '">go to slide ' +
+        (index + 1) +
+        '</button>'
+      );
+    },
   },
 });
 
@@ -45,6 +52,10 @@ var reviewSwiper = new Swiper('.reviews-swiper', {
   slidesPerGroup: 1,
   loop: true,
   loopFillGroupWithBlank: true,
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+  },
   breakpoints: {
     //  >= 768px
     768: {
@@ -61,5 +72,14 @@ var reviewSwiper = new Swiper('.reviews-swiper', {
   pagination: {
     el: '.swiper-reviews-pagination',
     clickable: true,
+    renderBullet: function (index, className) {
+      return (
+        '<button class="' +
+        className +
+        '">go to slide ' +
+        (index + 1) +
+        '</button>'
+      );
+    },
   },
 });

@@ -88,8 +88,8 @@
         flex-basis: calc(25% - 15px);
       }
 
-      &:hover .unique-card-wrapper,
-      &:focus .unique-card-wrapper {
+      &:hover .unique-card,
+      &:focus .unique-card {
         transform: rotateY(180deg);
       }
 
@@ -98,11 +98,11 @@
         transform: rotateY(360deg);
       }
 
-      &:first-child .unique-card-wrapper {
+      &:first-child .unique-card {
         background-color: $orange;
       }
 
-      &:nth-child(3) .unique-card-wrapper {
+      &:nth-child(3) .unique-card {
         border: transparent;
         background-color: $darkViolet;
       }
@@ -115,7 +115,7 @@
         color: $lightBlack;
       }
 
-      .unique-card-wrapper {
+      .unique-card {
         max-width: 100%;
         max-height: 100%;
         display: flex;
@@ -129,20 +129,24 @@
         transition: transform 1s $cubicTransition;
         backface-visibility: hidden;
 
-        .unique-img {
+        .img {
           margin-inline: auto;
-          margin-bottom: 20px;
+          margin-top: 20px;
 
-          @media screen and (min-width: 768px) {
-            margin-bottom: 30px;
+          @media screen and (min-width: 576px) {
+            margin-top: 0;
           }
         }
 
         .unique-card-title {
+          font-size: 18px;
           font-weight: 600;
-          font-size: 14px;
           line-height: 1.28;
           text-transform: uppercase;
+
+          @media screen and (min-width: 768px) {
+            font-size: 20px;
+          }
         }
       }
 
