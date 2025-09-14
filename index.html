@@ -10,7 +10,7 @@
 
     <title>Simply Chocolate</title>
     <script type="module" crossorigin src="/simply-chocolate/assets/index-b9b646f8.js"></script>
-    <link rel="stylesheet" href="/simply-chocolate/assets/index-bf5ceca5.css">
+    <link rel="stylesheet" href="/simply-chocolate/assets/index-3622e462.css">
   </head>
 
   <body>
@@ -459,7 +459,7 @@
           <h3 class="unique-card-title">Semi sweet chocolate</h3>
         </div>
         <div class="unique-overlay">
-          <h2 class="unique-overlay-title">Semi sweet chocolate</h2>
+          <p class="unique-overlay-title">Semi sweet chocolate</p>
           <p class="unique-overlay-text">
             Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One of
             the best ways to gain an understanding of this type of chocolate is
@@ -478,14 +478,18 @@
     <h2 class="headline">How it's <span>made?</span></h2>
     <div class="how-its-made-inner">
       <div class="video-container" id="videocontainer">
+        <!--
         <picture>
           <source
-            srcset="/simply-chocolate/assets/how-984b7962.jpg 1x, /simply-chocolate/assets/how@2x-33f84165.jpg 2x"
+            srcset="
+              /img/how-its-made/how.jpg    1x,
+              /img/how-its-made/how@2x.jpg 2x
+            "
             media="(min-width: 1200px)"
           />
           <img
             id="image"
-            src="/simply-chocolate/assets/how-984b7962.jpg"
+            src="/img/how-its-made/how.jpg"
             alt="chocolate video"
             width="760"
             height="500"
@@ -494,12 +498,8 @@
             onclick="playVid()"
           />
         </picture>
-        <!--
-        <svg class="play-icon" width="44" height="44">
-          <use href="./img/sprite.svg#play"></use>
-        </svg>
-        -->
 
+        
         <iframe
           class="how-its-made-video hidden"
           width="760"
@@ -511,6 +511,43 @@
           allowfullscreen
           frameborder="0"
         ></iframe>
+      -->
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" />
+        <div
+          class="yt-lite"
+          data-ytid="xPe1jMuX32s"
+          aria-label="Відтворити відео"
+          role="button"
+          tabindex="0"
+        >
+          <picture>
+            <source
+              srcset="/simply-chocolate/assets/how-984b7962.jpg 1x, /simply-chocolate/assets/how@2x-33f84165.jpg 2x"
+              media="(min-width: 1200px)"
+            />
+            <img
+              id="image"
+              src="/simply-chocolate/assets/how-984b7962.jpg"
+              alt="chocolate video"
+              width="760"
+              height="500"
+              class="how-its-made-video"
+              loading="lazy"
+              onclick="playVid()"
+            />
+          </picture>
+          <div class="yt-play"></div>
+          <noscript>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/xPe1jMuX32s"
+              title="YouTube video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </noscript>
+        </div>
       </div>
       <div class="text-container">
         <h3>
@@ -540,6 +577,7 @@
     </div>
   </div>
 
+  <!--
   <script>
     window.addEventListener('load', event => {
       const video = document.querySelector('iframe');
@@ -548,6 +586,56 @@
       video.classList.remove('hidden');
       image.classList.add('hidden');
     });
+  </script>
+-->
+  <script>
+    function loadYT(el) {
+      if (el.dataset.loaded) return;
+      el.dataset.loaded = '1';
+      const id = el.dataset.ytid;
+      const iframe = document.createElement('iframe');
+      iframe.src =
+        'https://www.youtube-nocookie.com/embed/' +
+        id +
+        '?autoplay=1&rel=0&modestbranding=1';
+      iframe.title = 'YouTube video';
+      iframe.loading = 'eager'; // після кліку — можна eager
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      el.innerHTML = ''; // прибрати прев'ю
+      el.appendChild(iframe);
+    }
+
+    document.addEventListener('click', e => {
+      const el = e.target.closest('.yt-lite');
+      if (el) loadYT(el);
+    });
+    document.addEventListener('keydown', e => {
+      if (!['Enter', ' '].includes(e.key)) return;
+      const el = document.activeElement.closest?.('.yt-lite');
+      if (el) {
+        e.preventDefault();
+        loadYT(el);
+      }
+    });
+
+    // Опційно: lazy-ініціалізація прев’ю, якщо їх багато (відтермінувати завантаження тумбів)
+    const lites = document.querySelectorAll('.yt-lite');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        for (const ent of entries) {
+          if (ent.isIntersecting) {
+            const img = ent.target.querySelector('.yt-thumb');
+            if (img && img.dataset.src) {
+              img.src = img.dataset.src;
+            }
+            io.unobserve(ent.target);
+          }
+        }
+      });
+      lites.forEach(el => io.observe(el));
+    }
   </script>
 </section>
 
