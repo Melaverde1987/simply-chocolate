@@ -41,7 +41,7 @@
 
   .modal-headline {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.2;
     letter-spacing: -0.03em;
     text-transform: uppercase;
@@ -98,16 +98,12 @@
       display: block;
       font-style: normal;
       font-weight: 500;
-      font-size: 12px;
       line-height: 1.16;
       letter-spacing: -0.02em;
       color: $black;
       margin-bottom: 8px;
       margin-top: 18px;
-
-      @media only screen and (min-width: 768px) {
-        font-size: 14px;
-      }
+      font-size: clamp(1.2rem, 2.5vw, 1.4rem);
     }
 
     .form-input {
@@ -135,7 +131,11 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      font-size: 14px;
+      padding: 13px 22px;
+
+      @media screen and (min-width: 768px) {
+        padding: 14px 40px;
+      }
     }
   }
 }

@@ -139,14 +139,10 @@
         }
 
         .unique-card-title {
-          font-size: 18px;
           font-weight: 600;
           line-height: 1.28;
           text-transform: uppercase;
-
-          @media screen and (min-width: 768px) {
-            font-size: 20px;
-          }
+          font-size: clamp(1.8rem, 2.5vw, 2rem);
         }
       }
 
@@ -166,7 +162,7 @@
 
         .unique-overlay-title {
           font-weight: 600;
-          font-size: 18px;
+          font-size: 1.8rem;
           line-height: 1.2;
           letter-spacing: -0.03em;
           color: $lightBlack;
@@ -175,7 +171,7 @@
         }
 
         .unique-overlay-text {
-          font-size: 14px;
+          font-size: 1.4rem;
           line-height: 1.28;
           letter-spacing: -0.02em;
           color: $lightBlack;

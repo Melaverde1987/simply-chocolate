@@ -1,9 +1,15 @@
 @import 'variables';
 
 .btn-primary {
+  padding: 12px 22px;
   background: $orange;
   color: $white;
   border: none;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 40px;
+  }
 
   &:hover,
   &:focus {
@@ -12,25 +18,14 @@
   }
 }
 
-.btn-secondary {
-  background-color: transparent;
-  border: 1px solid $orange;
-  color: $lightBlack;
-
-  &:hover,
-  &:focus {
-    background-color: $orange;
-    color: $white;
-  }
-}
-
 .btn-outline {
-  padding: 14px 22px;
+  padding: 12px 22px;
   border-radius: 100px;
   font-weight: 600;
   background-color: transparent;
   border: 1px solid $white;
   color: $white;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
 
   @media screen and (min-width: 768px) {
     padding: 14px 40px;

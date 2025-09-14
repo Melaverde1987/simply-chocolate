@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -10,9 +11,42 @@ html {
   &::-webkit-scrollbar-thumb {
     background-color: $orange;
   }
+
   &::-webkit-scrollbar-track {
     background-color: $lightWhite;
   }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $orange;
+  }
+
+  /* for Firefox */
+  @-moz-document url-prefix() {
+    scrollbar-width: thin;
+    scrollbar-color: $orange $orange;
+  }
+}
+
+::selection {
+  background: $orange;
+  color: $white;
+}
+
+:focus-visible {
+  outline: $orange dotted 2px;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: $fontPrimary;
+  line-height: 1.4;
+  font-weight: 400;
+  color: $lightBlack;
+  background-color: $lightWhite;
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  font-size: 1.6rem;
 }
 
 h1,
@@ -44,7 +78,7 @@ a {
 
 button {
   cursor: pointer;
-  padding: 14px 22px;
+  padding: 12px 22px;
   border-radius: 100px;
   font-weight: 600;
   transition: all 400ms $cubicTransition;
@@ -75,13 +109,4 @@ textarea::placeholder {
   &:focus {
     outline: 1px solid $orange;
   }
-}
-
-body {
-  font-family: $fontPrimary;
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 400;
-  color: $lightBlack;
-  background-color: $lightWhite;
 }

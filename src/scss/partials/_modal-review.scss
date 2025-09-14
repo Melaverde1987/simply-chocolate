@@ -17,7 +17,7 @@
 
   .modal-headline {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.2;
     text-align: center;
     letter-spacing: -0.03em;
@@ -71,16 +71,12 @@
       display: block;
       font-style: normal;
       font-weight: 500;
-      font-size: 12px;
       line-height: 1.16;
       letter-spacing: -0.02em;
       color: $black;
       margin-bottom: 8px;
       margin-top: 18px;
-
-      @media only screen and (min-width: 768px) {
-        font-size: 14px;
-      }
+      font-size: clamp(1.2rem, 2.5vw, 1.4rem);
     }
 
     .form-input,

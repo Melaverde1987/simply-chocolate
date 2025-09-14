@@ -9,13 +9,9 @@
 
   .headline {
     font-weight: 600;
-    font-size: 24px;
     line-height: 1.2;
     max-width: 300px;
-
-    @media only screen and (min-width: 768px) {
-      font-size: 28px;
-    }
+    font-size: clamp(2.4rem, 2.5vw, 2.8rem);
 
     span {
       color: $orange;

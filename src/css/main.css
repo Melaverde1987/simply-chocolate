@@ -154,6 +154,8 @@ OTHER
 */
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
+  /* for Firefox */
 }
 html::-webkit-scrollbar {
   width: 6px;
@@ -164,6 +166,37 @@ html::-webkit-scrollbar-thumb {
 }
 html::-webkit-scrollbar-track {
   background-color: #fafafa;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #fd9222;
+}
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #fd9222 #fd9222;
+  }
+}
+
+::selection {
+  background: #fd9222;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: #fd9222 dotted 2px;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #111111;
+  background-color: #fafafa;
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  font-size: 1.6rem;
 }
 
 h1,
@@ -193,7 +226,7 @@ a:hover, a:focus {
 
 button {
   cursor: pointer;
-  padding: 14px 22px;
+  padding: 12px 22px;
   border-radius: 100px;
   font-weight: 600;
   transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -231,15 +264,6 @@ input::placeholder:focus,
 textarea:focus,
 textarea::placeholder:focus {
   outline: 1px solid #fd9222;
-}
-
-body {
-  font-family: Montserrat, sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 400;
-  color: #111111;
-  background-color: #fafafa;
 }
 
 /* 
@@ -399,32 +423,30 @@ OTHER
 ===========
 */
 .btn-primary {
+  padding: 12px 22px;
   background: #fd9222;
   color: #ffffff;
   border: none;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+}
+@media screen and (min-width: 768px) {
+  .btn-primary {
+    padding: 14px 40px;
+  }
 }
 .btn-primary:hover, .btn-primary:focus {
   background-color: #fcf1e0;
   color: #fd9222;
 }
 
-.btn-secondary {
-  background-color: transparent;
-  border: 1px solid #fd9222;
-  color: #111111;
-}
-.btn-secondary:hover, .btn-secondary:focus {
-  background-color: #fd9222;
-  color: #ffffff;
-}
-
 .btn-outline {
-  padding: 14px 22px;
+  padding: 12px 22px;
   border-radius: 100px;
   font-weight: 600;
   background-color: transparent;
   border: 1px solid #ffffff;
   color: #ffffff;
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
 }
 @media screen and (min-width: 768px) {
   .btn-outline {
@@ -759,17 +781,12 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .hero .hero-inner h1 {
   margin-top: auto;
-  max-width: 295px;
+  max-width: 485px;
   font-weight: 500;
-  font-size: 20px;
   letter-spacing: -0.03em;
   color: #ffffff;
-}
-@media screen and (min-width: 768px) {
-  .hero .hero-inner h1 {
-    max-width: 484px;
-    font-size: 28px;
-  }
+  line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 2.8rem);
 }
 .hero .hero-inner .hero-blocks {
   display: flex;
@@ -805,14 +822,9 @@ header .menu-container .social-icons .social-icon .icon {
 .hero .hero-inner .scroll-button .scroll-title {
   color: #ffffff;
   font-weight: 500;
-  font-size: 12px;
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
   letter-spacing: -0.03em;
   transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media screen and (min-width: 768px) {
-  .hero .hero-inner .scroll-button .scroll-title {
-    font-size: 14px;
-  }
 }
 
 .advantages {
@@ -885,7 +897,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .advantages .advantages-list .advantages-item .advantages-desc .advantages-title {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.22;
   color: #ffffff;
 }
@@ -1033,15 +1045,10 @@ header .menu-container .social-icons .social-icon .icon {
   }
 }
 .unique-components .unique-list .unique-item .unique-card .unique-card-title {
-  font-size: 18px;
   font-weight: 600;
   line-height: 1.28;
   text-transform: uppercase;
-}
-@media screen and (min-width: 768px) {
-  .unique-components .unique-list .unique-item .unique-card .unique-card-title {
-    font-size: 20px;
-  }
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
 }
 .unique-components .unique-list .unique-item .unique-overlay {
   position: absolute;
@@ -1059,7 +1066,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .unique-components .unique-list .unique-item .unique-overlay .unique-overlay-title {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: #111111;
@@ -1067,7 +1074,7 @@ header .menu-container .social-icons .social-icon .icon {
   text-transform: uppercase;
 }
 .unique-components .unique-list .unique-item .unique-overlay .unique-overlay-text {
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.28;
   letter-spacing: -0.02em;
   color: #111111;
@@ -1101,7 +1108,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .how-its-made .headline {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1160,7 +1167,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .how-its-made .how-its-made-inner .text-container h3 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   margin-bottom: 20px;
 }
@@ -1222,7 +1229,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .our-products .headline {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1271,7 +1278,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .our-products .swiper-container .swiper-wrapper .card .card-headline {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.33;
   letter-spacing: -0.02em;
   margin-top: 8px;
@@ -1279,21 +1286,16 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .our-products .swiper-container .swiper-wrapper .card .card-text {
   font-weight: 400;
-  font-size: 14px;
   line-height: 1.17;
   letter-spacing: -0.02em;
   margin-bottom: 18px;
-}
-@media screen and (min-width: 768px) {
-  .our-products .swiper-container .swiper-wrapper .card .card-text {
-    font-size: 16px;
-  }
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
 }
 .our-products .swiper-container .swiper-wrapper .card .card-price {
   width: 94px;
   height: 33px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.21;
   color: #111111;
   display: flex;
@@ -1337,7 +1339,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .top-sellers .headline {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1388,7 +1390,6 @@ header .menu-container .social-icons .social-icon .icon {
   }
 }
 .top-sellers .text-holder .title {
-  font-size: 16px;
   line-height: 1.28;
   letter-spacing: -0.02em;
   max-width: 310px;
@@ -1412,7 +1413,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .reviews .headline {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 2.4rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1470,13 +1471,13 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .reviews .reviews-swiper .reviews-text .reviews-name {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 .reviews .reviews-swiper .reviews-text .reviews-desc {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.7);
   background-color: transparent;
@@ -1541,7 +1542,6 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .subscribe .headline {
   font-weight: 600;
-  font-size: 20px;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1550,15 +1550,14 @@ header .menu-container .social-icons .social-icon .icon {
   color: #ffffff;
   max-width: 290px;
   margin-inline: auto;
+  font-size: clamp(2rem, 2.5vw, 2.4rem);
 }
 @media screen and (min-width: 768px) {
   .subscribe .headline {
-    font-size: 24px;
     max-width: 380px;
   }
 }
 .subscribe .text {
-  font-size: 14px;
   line-height: 1.29;
   text-align: center;
   letter-spacing: -0.02em;
@@ -1569,7 +1568,6 @@ header .menu-container .social-icons .social-icon .icon {
 @media screen and (min-width: 768px) {
   .subscribe .text {
     max-width: 470px;
-    font-size: 16px;
   }
 }
 .subscribe .btn-primary {
@@ -1589,14 +1587,9 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .footer-section .headline {
   font-weight: 600;
-  font-size: 24px;
   line-height: 1.2;
   max-width: 300px;
-}
-@media only screen and (min-width: 768px) {
-  .footer-section .headline {
-    font-size: 28px;
-  }
+  font-size: clamp(2.4rem, 2.5vw, 2.8rem);
 }
 .footer-section .headline span {
   color: #fd9222;
@@ -1753,7 +1746,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .modal-buy .modal-holder .modal-headline {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1811,7 +1804,7 @@ header .menu-container .social-icons .social-icon .icon {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 100px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 1.4rem;
   width: auto;
   display: inline-block;
 }
@@ -1833,17 +1826,12 @@ header .menu-container .social-icons .social-icon .icon {
   display: block;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.16;
   letter-spacing: -0.02em;
   color: var(--black);
   margin-bottom: 8px;
   margin-top: 18px;
-}
-@media only screen and (min-width: 768px) {
-  .modal-buy .modal-holder .modal-form .form-holder .form-item .form-label {
-    font-size: 14px;
-  }
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 }
 .modal-buy .modal-holder .modal-form .form-holder .form-item .form-input,
 .modal-buy .modal-holder .modal-form .form-holder .form-item .form-textarea {
@@ -1895,7 +1883,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .modal-review .modal-headline {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.03em;
@@ -1943,17 +1931,12 @@ header .menu-container .social-icons .social-icon .icon {
   display: block;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.16;
   letter-spacing: -0.02em;
   color: #000000;
   margin-bottom: 8px;
   margin-top: 18px;
-}
-@media only screen and (min-width: 768px) {
-  .modal-review .modal-form .form-label {
-    font-size: 14px;
-  }
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 }
 .modal-review .modal-form .form-input,
 .modal-review .modal-form .form-textarea {
@@ -2019,7 +2002,7 @@ header .menu-container .social-icons .social-icon .icon {
 }
 .modal-subscribe .modal-headline {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -2066,17 +2049,12 @@ header .menu-container .social-icons .social-icon .icon {
   display: block;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
   line-height: 1.16;
   letter-spacing: -0.02em;
   color: #000000;
   margin-bottom: 8px;
   margin-top: 18px;
-}
-@media only screen and (min-width: 768px) {
-  .modal-subscribe .modal-form .form-label {
-    font-size: 14px;
-  }
+  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 }
 .modal-subscribe .modal-form .form-input {
   position: relative;
@@ -2101,5 +2079,10 @@ header .menu-container .social-icons .social-icon .icon {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 14px;
+  padding: 13px 22px;
+}
+@media screen and (min-width: 768px) {
+  .modal-subscribe .modal-form .btn-primary {
+    padding: 14px 40px;
+  }
 }/*# sourceMappingURL=main.css.map */
