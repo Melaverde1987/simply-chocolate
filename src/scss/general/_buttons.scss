@@ -6,6 +6,9 @@
   color: $white;
   border: none;
   font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+  border-radius: 100px;
+  font-weight: 600;
+  transition: all 400ms $cubicTransition;
 
   @media screen and (min-width: 768px) {
     padding: 14px 40px;
@@ -26,6 +29,9 @@
   border: 1px solid $white;
   color: $white;
   font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+  border-radius: 100px;
+  font-weight: 600;
+  transition: all 400ms $cubicTransition;
 
   @media screen and (min-width: 768px) {
     padding: 14px 40px;
