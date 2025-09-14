@@ -10,7 +10,7 @@
 
     <title>Simply Chocolate</title>
     <script type="module" crossorigin src="/simply-chocolate/assets/index-b9b646f8.js"></script>
-    <link rel="stylesheet" href="/simply-chocolate/assets/index-3622e462.css">
+    <link rel="stylesheet" href="/simply-chocolate/assets/index-76634904.css">
   </head>
 
   <body>
@@ -478,46 +478,12 @@
     <h2 class="headline">How it's <span>made?</span></h2>
     <div class="how-its-made-inner">
       <div class="video-container" id="videocontainer">
-        <!--
-        <picture>
-          <source
-            srcset="
-              /img/how-its-made/how.jpg    1x,
-              /img/how-its-made/how@2x.jpg 2x
-            "
-            media="(min-width: 1200px)"
-          />
-          <img
-            id="image"
-            src="/img/how-its-made/how.jpg"
-            alt="chocolate video"
-            width="760"
-            height="500"
-            class="how-its-made-video"
-            loading="lazy"
-            onclick="playVid()"
-          />
-        </picture>
-
-        
-        <iframe
-          class="how-its-made-video hidden"
-          width="760"
-          height="500"
-          src="https://www.youtube.com/embed/xPe1jMuX32s"
-          title="YouTube video player"
-          frameborder="0"
-          allow="autoplay"
-          allowfullscreen
-          frameborder="0"
-        ></iframe>
-      -->
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
         <div
           class="yt-lite"
           data-ytid="xPe1jMuX32s"
-          aria-label="Відтворити відео"
+          aria-label="Play video"
           role="button"
           tabindex="0"
         >
@@ -529,12 +495,11 @@
             <img
               id="image"
               src="/simply-chocolate/assets/how-984b7962.jpg"
-              alt="chocolate video"
+              alt="chocolate video preview"
               width="760"
               height="500"
               class="how-its-made-video"
               loading="lazy"
-              onclick="playVid()"
             />
           </picture>
           <div class="yt-play"></div>
@@ -577,17 +542,6 @@
     </div>
   </div>
 
-  <!--
-  <script>
-    window.addEventListener('load', event => {
-      const video = document.querySelector('iframe');
-      const image = document.querySelector('#image');
-      video.classList.add('active');
-      video.classList.remove('hidden');
-      image.classList.add('hidden');
-    });
-  </script>
--->
   <script>
     function loadYT(el) {
       if (el.dataset.loaded) return;
@@ -620,7 +574,7 @@
       }
     });
 
-    // Опційно: lazy-ініціалізація прев’ю, якщо їх багато (відтермінувати завантаження тумбів)
+    // Опційно: lazy-ініціалізація превю, якщо їх багато (відтермінувати завантаження тумбів)
     const lites = document.querySelectorAll('.yt-lite');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
