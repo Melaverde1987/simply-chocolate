@@ -259,6 +259,34 @@ textarea::placeholder:focus {
   outline: 1px solid #fd9222;
 }
 
+/* Chrome/Safari */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  /* перекриваємо фон автозаповнення */
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  /* колір тексту та каретки */
+  -webkit-text-fill-color: #000000 !important;
+  caret-color: #000000;
+  /* хак проти «блимання» жовтим */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+}
+
+/* Firefox */
+input:autofill,
+textarea:autofill {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
 /* 
 ================
 COLORS 
@@ -398,6 +426,11 @@ OTHER
   backdrop-filter: blur(1px);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
 }
 
 /* 
@@ -1136,6 +1169,51 @@ header .menu-container .social-icons .social-icon .icon {
     flex-basis: 60%;
   }
 }
+.how-its-made .how-its-made-inner .video-container .yt-lite {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000000;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.how-its-made .how-its-made-inner .video-container .yt-lite .yt-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.how-its-made .how-its-made-inner .video-container .yt-lite .yt-play {
+  position: absolute;
+  inset: auto 0 0 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 68px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(87, 82, 82, 0.6);
+}
+.how-its-made .how-its-made-inner .video-container .yt-lite .yt-play:before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 14px;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #ffffff;
+}
+.how-its-made .how-its-made-inner .video-container .yt-lite > iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 .how-its-made .how-its-made-inner .video-container .how-its-made-video {
   width: 100%;
   height: 100%;
@@ -1191,73 +1269,7 @@ header .menu-container .social-icons .social-icon .icon {
   left: -16px;
   top: 5px;
   background: rgb(76, 76, 76);
-  border: 1px solid rgb(236, 237, 237);
-}
-
-.play-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
-
-.active {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-.yt-lite {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 16/9; /* responsive контейнер */
-  background: #000;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.yt-thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.yt-play {
-  position: absolute;
-  inset: auto 0 0 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 68px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.yt-play::before {
-  content: "";
-  position: absolute;
-  left: 26px;
-  top: 14px;
-  border-style: solid;
-  border-width: 10px 0 10px 16px;
-  border-color: transparent transparent transparent #fff;
-}
-
-.yt-lite > iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+  border: 1px solid #ffffff;
 }
 
 .our-products {
@@ -1857,21 +1869,19 @@ header .menu-container .social-icons .social-icon .icon {
   width: auto;
   display: inline-block;
 }
-.modal-buy .modal-holder .modal-form .form-holder .flex-container {
-  display: flex;
-  gap: 12px;
+.modal-buy .modal-holder .modal-form .top-sellers-list input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
-.modal-buy .modal-holder .modal-form .form-holder .form-item.w-50 {
-  flex-basis: calc(50% - 6px);
-  display: inline-block;
+.modal-buy .modal-holder .modal-form .top-sellers-list input[type=radio]:checked + .top-sellers-item {
+  outline: 2px solid #fd9222;
 }
-.modal-buy .modal-holder .modal-form .form-holder .form-item.card {
-  position: relative;
+.modal-buy .modal-holder .modal-form .top-sellers-list input[type=radio]:focus-visible + .top-sellers-item {
+  outline: 2px dashed #fd9222;
+  outline-offset: 2px;
 }
-.modal-buy .modal-holder .modal-form .form-holder .form-item.card .form-input {
-  padding-right: 45px;
-}
-.modal-buy .modal-holder .modal-form .form-holder .form-item .form-label {
+.modal-buy .modal-holder .modal-form .form-label {
   display: block;
   font-style: normal;
   font-weight: 500;
@@ -1881,6 +1891,20 @@ header .menu-container .social-icons .social-icon .icon {
   margin-bottom: 8px;
   margin-top: 18px;
   font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+}
+.modal-buy .modal-holder .modal-form .form-holder .flex-container {
+  display: flex;
+  gap: 12px;
+}
+.modal-buy .modal-holder .modal-form .form-holder .form-item.w-50 {
+  flex-basis: calc(50% - 6px);
+  display: inline-block;
+}
+.modal-buy .modal-holder .modal-form .form-holder .form-item .card {
+  position: relative;
+}
+.modal-buy .modal-holder .modal-form .form-holder .form-item .card .form-input {
+  padding-right: 45px;
 }
 .modal-buy .modal-holder .modal-form .form-holder .form-item .form-input,
 .modal-buy .modal-holder .modal-form .form-holder .form-item .form-textarea {
@@ -1907,6 +1931,9 @@ header .menu-container .social-icons .social-icon .icon {
   margin-block: auto;
   right: 12px;
   transform: translateY(-50%);
+}
+.modal-buy .modal-holder .modal-form .error-message {
+  margin-top: 6px;
 }
 .modal-buy .modal-holder .modal-form .btn-primary {
   margin-top: 20px;
@@ -2006,6 +2033,9 @@ header .menu-container .social-icons .social-icon .icon {
 .modal-review .modal-form .form-textarea {
   height: 100px;
 }
+.modal-review .modal-form .error-message {
+  margin-top: 6px;
+}
 .modal-review .modal-form .btn-primary {
   margin-top: 20px;
 }
@@ -2087,11 +2117,8 @@ header .menu-container .social-icons .social-icon .icon {
   }
 }
 .modal-subscribe .modal-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 16px;
   position: relative;
+  padding-bottom: 25px;
 }
 .modal-subscribe .modal-form .form-label {
   flex-basis: 100%;
@@ -2124,9 +2151,13 @@ header .menu-container .social-icons .social-icon .icon {
   border: 1px solid #fd9222;
   outline: none;
 }
-.modal-subscribe .modal-form .btn-primary {
+.modal-subscribe .modal-form .error-message {
   position: absolute;
   bottom: 0;
+}
+.modal-subscribe .modal-form .btn-primary {
+  position: absolute;
+  bottom: 25px;
   right: 0;
   padding: 13px 22px;
 }

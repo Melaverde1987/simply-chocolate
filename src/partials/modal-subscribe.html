@@ -13,16 +13,19 @@
     <div class="modal-subscribe-pic"></div>
     <h2 class="modal-headline">Explore our<span> new chocolate</span> first</h2>
 
-    <form action="#" class="modal-form">
-      <label for="subscribeform-email" class="form-label">E-Mail</label>
+    <form class="modal-form subscribe-js">
+      <label for="subscribeform-email" class="form-label">E-Mail *</label>
       <input
         id="subscribeform-email"
         type="email"
         name="user-email"
         class="form-input"
         placeholder="Enter your email"
-        required
       />
+      <p role="alert" class="error-message required">E-Mail is required</p>
+      <p role="alert" class="error-message required-email">
+        Please enter a valid email address
+      </p>
 
       <button type="submit" class="btn-primary">Subscribe</button>
     </form>

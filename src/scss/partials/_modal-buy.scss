@@ -119,6 +119,33 @@
             display: inline-block;
           }
         }
+
+        input[type='radio'] {
+          position: absolute;
+          opacity: 0;
+          pointer-events: none;
+
+          &:checked + .top-sellers-item {
+            outline: 2px solid $orange;
+          }
+
+          &:focus-visible + .top-sellers-item {
+            outline: 2px dashed $orange;
+            outline-offset: 2px;
+          }
+        }
+      }
+
+      .form-label {
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.16;
+        letter-spacing: -0.02em;
+        color: var(--black);
+        margin-bottom: 8px;
+        margin-top: 18px;
+        font-size: clamp(1.2rem, 2.5vw, 1.4rem);
       }
 
       .form-holder {
@@ -133,24 +160,12 @@
             display: inline-block;
           }
 
-          &.card {
+          .card {
             position: relative;
 
             .form-input {
               padding-right: 45px;
             }
-          }
-
-          .form-label {
-            display: block;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 1.16;
-            letter-spacing: -0.02em;
-            color: var(--black);
-            margin-bottom: 8px;
-            margin-top: 18px;
-            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
           }
 
           .form-input,
@@ -182,6 +197,10 @@
             transform: translateY(-50%);
           }
         }
+      }
+
+      .error-message {
+        margin-top: 6px;
       }
 
       .btn-primary {

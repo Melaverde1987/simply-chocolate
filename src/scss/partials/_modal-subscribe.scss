@@ -87,11 +87,8 @@
   }
 
   .modal-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 16px;
     position: relative;
+    padding-bottom: 25px;
 
     .form-label {
       flex-basis: 100%;
@@ -127,9 +124,14 @@
       }
     }
 
-    .btn-primary {
+    .error-message {
       position: absolute;
       bottom: 0;
+    }
+
+    .btn-primary {
+      position: absolute;
+      bottom: 25px;
       right: 0;
       padding: 13px 22px;
 

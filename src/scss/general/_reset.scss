@@ -103,3 +103,33 @@ textarea::placeholder {
     outline: 1px solid $orange;
   }
 }
+
+/* Chrome/Safari */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  /* перекриваємо фон автозаповнення */
+  -webkit-box-shadow: 0 0 0 1000px $white inset !important;
+  box-shadow: 0 0 0 1000px $white inset !important;
+
+  /* колір тексту та каретки */
+  -webkit-text-fill-color: $black !important;
+  caret-color: $black;
+
+  /* хак проти «блимання» жовтим */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $white inset !important;
+  box-shadow: 0 0 0 1000px $white inset !important;
+}
+
+/* Firefox */
+input:autofill,
+textarea:autofill {
+  background-color: $white !important;
+  color: $black;
+}

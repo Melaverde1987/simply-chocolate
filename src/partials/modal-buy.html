@@ -13,112 +13,142 @@
     <div class="modal-holder">
       <h2 class="modal-headline">Buy <span>now</span></h2>
 
-      <form action="#" class="modal-form">
-        <ul class="top-sellers-list">
-          <li class="top-sellers-item">
-            <img
-              class="img"
-              src="./img/top-sellers/modal/desc_tab_choko.png"
-              alt="Chocolate"
-              width="84"
-              height="69"
-              loading="lazy"
-            />
-            <p class="img-title">100 g</p>
-          </li>
-          <li class="top-sellers-item">
-            <img
-              class="img"
-              src="./img/top-sellers/modal/desc_tab_wbchoko.png"
-              alt="White and black chocolate"
-              width="84"
-              height="69"
-              loading="lazy"
-            />
-            <p class="img-title">200 g</p>
-          </li>
-          <li class="top-sellers-item">
-            <img
-              class="img"
-              src="./img/top-sellers/modal/desc_tab_chokolate.png"
-              alt="White and black chocolate"
-              width="84"
-              height="69"
-              loading="lazy"
-            />
-            <p class="img-title">300 g</p>
-          </li>
-        </ul>
-
+      <form action="#" class="modal-form buy-js">
         <div class="form-holder">
+          <p class="form-label">Select your chocolate</p>
+          <div class="top-sellers-list">
+            <input id="100" type="radio" name="type" value="100" checked />
+            <label for="100" class="top-sellers-item">
+              <img
+                class="img"
+                src="./img/top-sellers/modal/desc_tab_choko.png"
+                alt="Chocolate"
+                width="84"
+                height="69"
+                loading="lazy"
+              />
+              <span class="img-title">100 g</span></label
+            >
+
+            <input id="200" type="radio" name="type" value="200" />
+            <label for="200" class="top-sellers-item">
+              <img
+                class="img"
+                src="./img/top-sellers/modal/desc_tab_wbchoko.png"
+                alt="White and black chocolate"
+                width="84"
+                height="69"
+                loading="lazy"
+              />
+              <span class="img-title">200 g</span>
+            </label>
+
+            <input id="300" type="radio" name="type" value="300" />
+            <label for="300" class="top-sellers-item">
+              <img
+                class="img"
+                src="./img/top-sellers/modal/desc_tab_chokolate.png"
+                alt="White and black chocolate"
+                width="84"
+                height="69"
+                loading="lazy"
+              />
+              <span class="img-title">300 g</span>
+            </label>
+          </div>
+
           <div class="flex-container">
             <div class="form-item w-50">
-              <label for="buyform-name" class="form-label">Name</label>
+              <label for="buyform-name" class="form-label">Name *</label>
               <input
                 id="buyform-name"
                 class="form-input top-name"
                 type="text"
                 name="name"
-                pattern="^[a-zA-Z]+$"
-                minlength="2"
                 placeholder="Name"
-                required
               />
+              <p role="alert" class="error-message required">
+                Name is required
+              </p>
+              <p role="alert" class="error-message required-pattern">
+                Please enter Latin letters only
+              </p>
             </div>
 
             <div class="form-item w-50">
-              <label for="buyform-surname" class="form-label">Surname</label>
+              <label for="buyform-surname" class="form-label">Surname *</label>
               <input
                 id="buyform-surname"
                 class="form-input"
                 type="text"
                 name="surname"
-                pattern="^[a-zA-Z]+$"
-                minlength="2"
                 placeholder="Surname"
-                required
               />
+
+              <p role="alert" class="error-message required">
+                Surname is required
+              </p>
+              <p role="alert" class="error-message required-pattern">
+                Please enter Latin letters only
+              </p>
             </div>
           </div>
           <div class="form-item">
-            <label for="buyform-email" class="form-label">Email</label>
+            <label for="buyform-email" class="form-label">Email *</label>
             <input
               id="buyform-email"
               class="form-input"
               type="email"
               name="email"
               placeholder="Enter your email"
-              required
             />
+            <p role="alert" class="error-message required">
+              E-Mail is required
+            </p>
+            <p role="alert" class="error-message required-email">
+              Please enter a valid email address
+            </p>
           </div>
 
           <div class="form-item">
-            <label for="buyform-phone" class="form-label">Phone number</label>
+            <label for="buyform-phone" class="form-label">Phone number *</label>
             <input
               id="buyform-phone"
               class="form-input"
               type="tel"
               name="user-phone"
               placeholder="Phone number"
-              pattern="[0-9]{14,23}"
-              required
             />
+            <p role="alert" class="error-message required">
+              Phone number is required
+            </p>
+            <p role="alert" class="error-message required-pattern">
+              Please enter numbers only
+            </p>
           </div>
 
-          <div class="form-item card">
-            <label for="buyform-card" class="form-label">Card number</label>
-            <input
-              id="buyform-card"
-              class="form-input"
-              type="text"
-              name="Cardnumber"
-              placeholder="Enter card"
-              pattern="[0-9\s]{13,19}"
-              required
-            />
-            <svg class="card-icon" width="31" height="19">
-              <use href="./img/sprite.svg#mastercard"></use>
-            </svg>
+          <div class="form-item">
+            <div class="card">
+              <label for="buyform-card" class="form-label">Card number *</label>
+              <input
+                id="buyform-card"
+                class="form-input"
+                type="text"
+                name="cardnumber"
+                placeholder="Enter card"
+              />
+
+              <svg class="card-icon" width="31" height="19">
+                <use href="./img/sprite.svg#mastercard"></use>
+              </svg>
+            </div>
+
+            <p role="alert" class="error-message required">
+              Card number is required
+            </p>
+            <p role="alert" class="error-message required-pattern">
+              Please enter numbers only
+            </p>
           </div>
 
           <div class="form-item">
