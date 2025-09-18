@@ -1779,6 +1779,7 @@ header .menu-container .social-icons .social-icon .icon {
   height: 24px;
   padding: 0;
   border: none;
+  border-radius: 50%;
   margin: 14px;
   display: flex;
   justify-content: center;
@@ -1978,6 +1979,7 @@ header .menu-container .social-icons .social-icon .icon {
   padding: 0;
   border: none;
   margin: 14px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2067,6 +2069,7 @@ header .menu-container .social-icons .social-icon .icon {
   padding: 0;
   border: none;
   margin: 14px;
+  border-radius: 50%;
   display: flex;
   fill: #ffffff;
   justify-content: center;
